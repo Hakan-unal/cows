@@ -30,7 +30,6 @@ const { Meta } = Card;
 
 const CowsComponent = () => {
     return cows.map((obj:CowsObjType, index:number) => 
-       
         <Col key={index} xs={24} sm={12} md={8} xl={6}>
           <Card
             hoverable
@@ -39,13 +38,11 @@ const CowsComponent = () => {
             <Meta title={obj.name} description={obj.description} />
           </Card>
         </Col>
-      
     );
   };
 
-const App = () => {
-  
 
+const App = () => {
   return (
     <Row gutter={[12, 36]}>
       <Col span={24} className="header" />
@@ -67,7 +64,7 @@ const App = () => {
         </Carousel>
       </Col>
 
-      <CowsComponent />
+      <CowsComponent ></CowsComponent>
     </Row>
   );
 };
