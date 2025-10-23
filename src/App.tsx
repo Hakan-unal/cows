@@ -8,9 +8,13 @@ import carousel4 from "../src/assets/carousel4.jpg";
 
 const cows = [
   { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
-  { name: "Adaklık", description: "Kurbanlık" },
-  { name: "Büyükbaş", description: "Kurbanlık" },
-  { name: "Küçükbaş", description: "Kurbanlık" },
+  { name: "Adaklık", description: "Kurbanlık", image: cow1  },
+  { name: "Büyükbaş", description: "Kurbanlık", image: cow1  },
+  { name: "Küçükbaş", description: "Kurbanlık", image: cow1  },
+  { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
+  { name: "Adaklık", description: "Kurbanlık", image: cow1  },
+  { name: "Büyükbaş", description: "Kurbanlık", image: cow1  },
+  { name: "Küçükbaş", description: "Kurbanlık", image: cow1  },
 ];
 
 const { Meta } = Card;
