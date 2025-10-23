@@ -19,8 +19,7 @@ const cows = [
 
 const { Meta } = Card;
 
-const App = () => {
-  const CowsComponent = () => {
+const CowsComponent = () => {
     return cows.map((obj, index) => {
       return (
         <Col key={index} xs={24} sm={12} md={8} xl={6}>
@@ -34,6 +33,9 @@ const App = () => {
       );
     });
   };
+
+const App = () => {
+  
 
   return (
     <Row gutter={[12, 36]}>
