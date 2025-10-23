@@ -1,15 +1,16 @@
-.loaderIcon .spin.FaIcons {
-    margin-right: 7px;
-    top: 2px;
-    animation: spin 1s infinite linear;
+.header{
+    background-color: brown;
+    height: 50px;
+    color: blue;
+    margin: 0px;
+    padding: 0px;
 }
 
-@keyframes spin {
-    from {
-        transform: scale(1) rotate(0deg);
-    }
+.contentStyle {
+  height: 360px;
+  color: #fff;
+  line-height: 160px;
+  text-align: center;
+  background: #364d79;
+};
 
-    to {
-        transform: scale(1) rotate(360deg);
-    }
-}

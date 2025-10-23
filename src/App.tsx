@@ -1,19 +1,58 @@
-import { Row, Typography, Col } from "antd";
+import { Row, Col, Card, Carousel } from "antd";
 import { useState } from "react";
+import cow1 from "../src/assets/cow1.jpg";
+import carousel1 from "../src/assets/carousel1.jpg";
+import carousel2 from "../src/assets/carousel2.jpg";
+import carousel3 from "../src/assets/carousel3.jpg";
+import carousel4 from "../src/assets/carousel4.jpg";
 
+const cows = [
+  { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
+  { name: "Adaklık", description: "Kurbanlık" },
+  { name: "Büyükbaş", description: "Kurbanlık" },
+  { name: "Küçükbaş", description: "Kurbanlık" },
+];
 
-
+const { Meta } = Card;
 
 const App = () => {
-  const [current, setCurrent] = useState<number>(3);
-
-
+  const CowsComponent = () => {
+    return cows.map((obj, index) => {
+      return (
+        <Col key={index} xs={24} sm={12} md={8} xl={6}>
+          <Card
+            hoverable
+            cover={<img draggable={false} alt="example" src={obj.image} />}
+          >
+            <Meta title={obj.name} description={obj.description} />
+          </Card>
+        </Col>
+      );
+    });
+  };
 
   return (
-    <Row justify={"center"}>
-      <Col span={16} md={8}>
-        
+    <Row gutter={[12, 36]}>
+      <Col span={24} className="header" />
+
+      <Col xs={{span:24,offset:0}} lg={{span:16,offset:4}} >
+        <Carousel autoplay>
+          <div>
+            <img draggable={false} alt="example" src={carousel1} />
+          </div>
+          <div>
+            <img draggable={false} alt="example" src={carousel2} />
+          </div>
+          <div>
+            <img draggable={false} alt="example" src={carousel3} />
+          </div>
+          <div>
+            <img draggable={false} alt="example" src={carousel4} />
+          </div>
+        </Carousel>
       </Col>
+
+      <CowsComponent />
     </Row>
   );
 };
