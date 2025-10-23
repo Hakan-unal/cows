@@ -8,7 +8,14 @@ import carousel2 from "../src/assets/carousel2.jpg";
 import carousel3 from "../src/assets/carousel3.jpg";
 import carousel4 from "../src/assets/carousel4.jpg";
 
-const cows = [
+type CowsObjType = {
+    name: string;
+    description: string;
+    image: string;
+}
+
+
+const cows:Array<CowsObjType>  = [
   { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
   { name: "Adaklık", description: "Kurbanlık", image: cow1  },
   { name: "Büyükbaş", description: "Kurbanlık", image: cow1  },
@@ -22,7 +29,7 @@ const cows = [
 const { Meta } = Card;
 
 const CowsComponent = () => {
-    return cows.map((obj, index) => 
+    return cows.map((obj:CowsObjType, index:number) => 
        
         <Col key={index} xs={24} sm={12} md={8} xl={6}>
           <Card
