@@ -1,5 +1,7 @@
 import { Row, Col, Card, Carousel } from "antd";
-import { useState } from "react";
+
+
+
 import cow1 from "../src/assets/cow1.jpg";
 import carousel1 from "../src/assets/carousel1.jpg";
 import carousel2 from "../src/assets/carousel2.jpg";
@@ -14,14 +16,14 @@ const cows = [
   { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
   { name: "Adaklık", description: "Kurbanlık", image: cow1  },
   { name: "Büyükbaş", description: "Kurbanlık", image: cow1  },
-  { name: "Küçükbaş", description: "Kurbanlık", image: cow1  },
+  { name: "Küçükbaş", description: "Kurbanlık", image: cow1  }
 ];
 
 const { Meta } = Card;
 
 const CowsComponent = () => {
     return cows.map((obj, index) => 
-       (
+       
         <Col key={index} xs={24} sm={12} md={8} xl={6}>
           <Card
             hoverable
@@ -30,7 +32,7 @@ const CowsComponent = () => {
             <Meta title={obj.name} description={obj.description} />
           </Card>
         </Col>
-      )
+      
     );
   };
 
