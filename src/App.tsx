@@ -1,7 +1,5 @@
 import { Row, Col, Card, Carousel } from "antd";
 
-
-
 import cow1 from "../src/assets/cow1.jpg";
 import carousel1 from "../src/assets/carousel1.jpg";
 import carousel2 from "../src/assets/carousel2.jpg";
@@ -9,45 +7,30 @@ import carousel3 from "../src/assets/carousel3.jpg";
 import carousel4 from "../src/assets/carousel4.jpg";
 
 type CowsObjType = {
-    name: string;
-    description: string;
-    image: string;
-}
+  name: string;
+  description: string;
+  image: string;
+};
 
-
-const cows:Array<CowsObjType>  = [
+const cows: Array<CowsObjType> = [
   { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
-  { name: "Adaklık", description: "Kurbanlık", image: cow1  },
-  { name: "Büyükbaş", description: "Kurbanlık", image: cow1  },
-  { name: "Küçükbaş", description: "Kurbanlık", image: cow1  },
+  { name: "Adaklık", description: "Kurbanlık", image: cow1 },
+  { name: "Büyükbaş", description: "Kurbanlık", image: cow1 },
+  { name: "Küçükbaş", description: "Kurbanlık", image: cow1 },
   { name: "Kurbanlık", description: "Kurbanlık", image: cow1 },
-  { name: "Adaklık", description: "Kurbanlık", image: cow1  },
-  { name: "Büyükbaş", description: "Kurbanlık", image: cow1  },
-  { name: "Küçükbaş", description: "Kurbanlık", image: cow1  }
+  { name: "Adaklık", description: "Kurbanlık", image: cow1 },
+  { name: "Büyükbaş", description: "Kurbanlık", image: cow1 },
+  { name: "Küçükbaş", description: "Kurbanlık", image: cow1 },
 ];
 
 const { Meta } = Card;
-
-const CowsComponent = () => {
-    return cows.map((obj:CowsObjType, index:number) => 
-        <Col key={index} xs={24} sm={12} md={8} xl={6}>
-          <Card
-            hoverable
-            cover={<img draggable={false} alt="example" src={obj.image} />}
-          >
-            <Meta title={obj.name} description={obj.description} />
-          </Card>
-        </Col>
-    );
-  };
-
 
 const App = () => {
   return (
     <Row gutter={[12, 36]}>
       <Col span={24} className="header" />
 
-      <Col xs={{span:24,offset:0}} lg={{span:16,offset:4}} >
+      <Col xs={{ span: 24, offset: 0 }} lg={{ span: 16, offset: 4 }}>
         <Carousel autoplay>
           <div>
             <img draggable={false} alt="example" src={carousel1} />
@@ -64,7 +47,18 @@ const App = () => {
         </Carousel>
       </Col>
 
-      <CowsComponent ></CowsComponent>
+      {cows.map((obj: CowsObjType, index: number) => {
+        return (
+          <Col key={index} xs={24} sm={12} md={8} xl={6}>
+            <Card
+              hoverable
+              cover={<img draggable={false} alt="example" src={obj.image} />}
+            >
+              <Meta title={obj.name} description={obj.description} />
+            </Card>
+          </Col>
+        );
+      })}
     </Row>
   );
 };
